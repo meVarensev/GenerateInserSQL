@@ -4,9 +4,8 @@ const getInsert = async () => {
     const firstNamesMale = fs.readFileSync('./first_names.txt', 'utf-8').replace(/\r\n/g, '\n').split('\n');
     const lastNamesMale = fs.readFileSync('./last_names.txt', 'utf-8').replace(/\r\n/g, '\n').split('\n');
     const MiddleNamesMale = fs.readFileSync('./middle_names.txt', 'utf-8').replace(/\r\n/g, '\n').split('\n');
-
-
     const NamesFemale = fs.readFileSync('./fio_female.txt', 'utf-8').replace(/\r\n/g, '\n').split('\n');
+    
     const LastNamesFem = NamesFemale.map(name => name.split(' ')[0]);
     const FirstNamesFem = NamesFemale.map(name => name.split(' ')[1]);
     const MiddleNamesFem = NamesFemale.map(name => name.split(' ')[2]);
