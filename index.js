@@ -24,13 +24,21 @@ const getInsert = async () => {
         genSQL += `\nINSERT INTO Students (FirstName, LastName, MiddleName, DateBirth) VALUES`;
         for (let j = 0; j < 999; j++) {
             if (j < 499) {
-                genSQL += `(N'${firstNamesMale[Math.floor(Math.random() * firstNamesMale.length)]}', N'${lastNamesMale[Math.floor(Math.random() * lastNamesMale.length)]}', N'${MiddleNamesMale[Math.floor(Math.random() * MiddleNamesMale.length)]}', '${dataBirth[Math.floor(Math.random() * dataBirth.length)]}'),`;
-            }
-            else {
-                genSQL += `(N'${FirstNamesFem[Math.floor(Math.random() * FirstNamesFem.length)]}', N'${LastNamesFem[Math.floor(Math.random() * LastNamesFem.length)]}', N'${MiddleNamesFem[Math.floor(Math.random() * MiddleNamesFem.length)]}', '${dataBirth[Math.floor(Math.random() * dataBirth.length)]}'),`;
+                genSQL += `(N'${firstNamesMale[Math.floor(Math.random() * firstNamesMale.length)]}', 
+                N'${lastNamesMale[Math.floor(Math.random() * lastNamesMale.length)]}', 
+                N'${MiddleNamesMale[Math.floor(Math.random() * MiddleNamesMale.length)]}', 
+                '${dataBirth[Math.floor(Math.random() * dataBirth.length)]}'),`;
+            } else {
+                genSQL += `(N'${FirstNamesFem[Math.floor(Math.random() * FirstNamesFem.length)]}', 
+                N'${LastNamesFem[Math.floor(Math.random() * LastNamesFem.length)]}', 
+                N'${MiddleNamesFem[Math.floor(Math.random() * MiddleNamesFem.length)]}', 
+                '${dataBirth[Math.floor(Math.random() * dataBirth.length)]}'),`;
             }
         }
-        genSQL += `(N'${firstNamesMale[Math.floor(Math.random() * firstNamesMale.length)]}', N'${lastNamesMale[Math.floor(Math.random() * lastNamesMale.length)]}', N'${MiddleNamesMale[Math.floor(Math.random() * MiddleNamesMale.length)]}', '${dataBirth[Math.floor(Math.random() * dataBirth.length)]}');`;
+        genSQL += `(N'${firstNamesMale[Math.floor(Math.random() * firstNamesMale.length)]}', 
+        N'${lastNamesMale[Math.floor(Math.random() * lastNamesMale.length)]}', 
+        N'${MiddleNamesMale[Math.floor(Math.random() * MiddleNamesMale.length)]}', 
+        '${dataBirth[Math.floor(Math.random() * dataBirth.length)]}');`;
     }
 
     fs.writeFileSync('./insert.sql', genSQL);
